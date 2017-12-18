@@ -1,0 +1,53 @@
+
+<div>
+          <div>
+              <table>
+                  <tr>
+		           <td><b>Year And Month</b></td>
+		           <td><input ng-model="date" type="date" data-format="MM-yyyy" id="datepickerM" required="required"></td>
+		          <td><b>Employee</b> </td>
+		             <td>
+		               <select ng-model="employee">
+		                    <option></option>
+		                	<option  value="{{x.id}}" ng-repeat="x in selectEmployee">{{x.firstname+" "+x.lastname}}</option>
+		          		</select>
+		     		</td>
+		          <td><b>Project</b></td>
+		          <td>
+			          <select ng-model="project">
+			                <option></option>
+			                <option ng-repeat="x in selectProject" value="{{x.id}}">{{x.projectname}}</option>
+			          </select>
+		          </td>
+		          <td><b>Customer</b></td>
+		          <td>
+			          <select ng-model="customer">
+			                <option></option>
+			                <option ng-repeat="x in selectCustomer" value="{{x.id}}">{{x.companyname}}</option>
+			          </select>
+		          </td>
+		         <td><button ng-click="showReport()" class="btn">Show report</button></td> 
+		    </tr>
+          </table>
+        </div>   
+                   <b>Manager Hour report</b> search:<input type="search" ng-model="search">         
+<table border="1" class="table table-striped">
+      <tr>  
+	    <th>Employee</th>  
+	    <th>Project</th>  
+	    <th>Date</th>  
+	    <th>Start hour</th>  
+	    <th>End hour</th>  
+	    <th>Description</th>  
+	</tr>  
+	<tr ng-repeat="x in managerHR | filter:search">  
+	    <td>{{ x.employee.firstname}}</td>  
+	    <td>{{ x.project.projectname}}</td>  
+	    <td>{{ x.date}}</td>  
+	    <td>{{ x.starthour}}</td>  
+	    <td>{{ x.endhour}}</td>  
+	    <td>{{ x.description}}</td>
+   </tr>  
+  </table>      
+</div>
+

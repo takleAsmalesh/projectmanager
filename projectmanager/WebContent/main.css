@@ -1,0 +1,60 @@
+body{
+	font-family: arial;
+	font-size: 15px;
+}
+.table{
+	width: 1024px;
+	background-color: #ffffff;
+}
+.title{
+	font-size:20px;
+	text-align: center;
+}
+.table>tbody>tr>td{
+	border-top: 0px solid ;
+}
+.logo{
+	float:right;
+	font-size:20px;
+    
+}
+.customer{
+	display: none;
+}
+.employee{
+	display: none;
+}
+.manager{
+	display: none;
+}
+.menu{
+	font-size:20px;
+	text-align: center;
+}
+.context{
+    font-size:15px;
+	text-align:left;
+	
+}
+.footer{
+	font-size:20px;
+	text-align: center;
+}
+.table2{
+	float: right;
+}
+.hide{
+	font-size:15px;
+	float: left;
+	 display: none;
+	
+}
+.img{
+	height: 40px;
+	width: 60px;
+	text-align: center;
+}
+.logout{
+	display: none;
+}
+	

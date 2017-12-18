@@ -1,0 +1,29 @@
+<div>
+	<form>
+	  Working hours per day:<br>
+	  start hour<select id="starttime">
+	  </select>
+	  end hour<select id="endtime">
+	  </select>
+	  <button ng-click="set()" class="btn btn-success">set</button>
+	  <br>
+	  Working days a week:<br>
+	    <div class="weekDays-selector">
+	          <input  type="checkbox" ng-model="week.Sunday" ng-true-value="'true,'" ng-false-value="'false,'"/>
+			  <label for="weekday-sun">Sunday</label>
+			  <input type="checkbox" ng-model="week.Monday" ng-true-value="'true,'" ng-false-value="'false,'"/>
+			  <label for="weekday-mon">Monday</label>
+			  <input type="checkbox" ng-model="week.Tuesday" ng-true-value="'true,'" ng-false-value="'false,'"/>
+			  <label for="weekday-tue">Tuesday</label>
+			  <input type="checkbox" ng-model="week.Wednesday" ng-true-value="'true,'" ng-false-value="'false,'"/>
+			  <label for="weekday-wed">Wednesday</label>
+			  <input type="checkbox" ng-model="week.Thursday" ng-true-value="'true,'" ng-false-value="'false,'"/>
+			  <label for="weekday-thu">Thursday</label>
+			  <input type="checkbox" ng-model="week.Friday" ng-true-value="'true,'" ng-false-value="'false,'"/>
+			  <label for="weekday-fri">Friday</label>
+			  <input type="checkbox" ng-model="week.Saturday" ng-true-value="'true,'" ng-false-value="'false'"/>
+			  <label for="weekday-sat">Saturday</label>
+			  <button ng-click="setday()" class="btn btn-success">set</button>
+        </div>
+	</form>
+</div>

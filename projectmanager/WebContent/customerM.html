@@ -1,0 +1,67 @@
+<div>
+<div>
+<b>Customer List</b> search:<input type="search" ng-model="search"><button ng-click="create()" class="btn btn-success">create customer</button>  
+<table border="1" class="table table-striped">  
+	<tr>  
+	    <th>Company name</th>  
+	    <th>Company number</th>  
+	    <th>Contact name</th>  
+	    <th>Email</th>  
+	    <th>Phone</th>  
+	    <th>Edit/Delete</th>  
+	</tr>  
+	<tr id="tr-{{x.id}}" ng-repeat="x in customerList | filter:search">  
+	    <td>{{ x.companyname }}</td>  
+	    <td>{{ x.companynumber}}</td>  
+	    <td>{{ x.contactname }}</td>  
+	    <td>{{ x.email }}</td>  
+	    <td>{{ x.phone }}</td>  
+	    <td>  
+          <button  ng-click="updaterow(x.id)" class="glyphicon glyphicon-edit btn btn-info"></button>  
+		  <button  ng-click="del(x.id)" class="glyphicon glyphicon-trash btn btn-danger"></button>  
+    	</td>  
+  </tr>  
+  </table>
+  </div>
+  <div  id="dialog" title="form" style="display:none">      
+    <form>  
+        <table>  
+			<tr>  
+				<td>companyname:</td>  
+				<td><input type="text" ng-model="companyname"/></td>  
+			</tr>
+			<tr>  
+				<td>companynumber:</td>  
+				<td><input type="text" ng-model="companynumber"/></td>  
+			</tr> 
+			<tr>  
+				<td>contactname:</td>   
+				<td><input type="text" ng-model="contactname"/></td>  
+			</tr>  
+			<tr>  
+				<td>email:</td>  
+				<td><input type="email" ng-model="email"/></td>  
+			</tr> 
+			<tr>  
+				<td>phone:</td>  
+				<td><input type="tel" ng-model="phone"/></td>  
+			</tr> 
+			<tr>  
+				<td>Username:</td>  
+				<td><input type="text" ng-model="username"/></td>  
+			</tr>  
+			<tr>  
+				<td>Password:</td>  
+				<td><input type="text" ng-model="password"/></td>  
+			</tr>   
+			<tr> 
+			    <td> 
+					<input type="submit" value="Add" ng-click="add()" class="btn btn-success">
+		            <input type="submit" value="Save" ng-click="edit()" class="btn btn-info">
+		            <input type="submit" value="clear" ng-click="reset()"> 
+	           </td>
+			</tr>  
+		</table>  
+    </form>
+    </div>  
+</div>  

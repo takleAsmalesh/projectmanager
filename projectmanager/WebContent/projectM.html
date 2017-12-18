@@ -1,0 +1,100 @@
+<div>
+   <div > 
+		 <b>Project list</b> search:<input type="search" ng-model="search"><button ng-click="create()" class="btn btn-success">create project</button>
+	<table border="1" class="table table-striped">  
+			<tr>  
+                <th>project name</th>
+                <th>customer</th>
+                <th>Project manager</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Start date</th>
+                <th>End date</th> 
+                <th>Edit/Delete</th> 
+			</tr>  
+			<tr id="tr-{{x.id}}" ng-repeat="x in projectList | filter:search">  
+			    <td>{{ x.projectname }}</td>  
+			    <td>{{ x.customer.companyname}}</td>  
+			    <td>{{ x.customerprojectmanager }}</td>  
+			    <td>{{ x.projectmanageremail }}</td>  
+			    <td>{{x.projectmanagerephone}}</td>
+			    <td>{{ x.startdate }}</td>  
+			    <td>{{ x.enddate }}</td>  
+			    <td>  
+		     	 <button  ng-click="updaterow(x.id)" class="glyphicon glyphicon-edit btn btn-info"></button>  
+				 <button  ng-click="del(x.id)" class="glyphicon glyphicon-trash btn btn-danger"></button>   
+    			</td>  
+  			</tr>  
+  		</table> 
+  	</div>
+  <div id="dialog" title="form" style="display:none">     
+    <form>  
+        <table>  
+			<tr>  
+				<td>project name:</td>  
+				<td><input type="text"  ng-model="projectname"/></td>  
+			</tr>
+			<tr>  
+				<td>customer:</td>  
+		        <td>
+		        	<select ng-model="customer">
+			                <option  data-ng-repeat="x in customers" value="{{x.id}}" >{{x.companyname}}
+			                </option >
+				   </select>
+		        </td>   
+			</tr>
+			<tr>  
+				<td>customerprojectmanager:</td>  
+				<td><input type="text"  ng-model="customerprojectmanager"/></td>  
+			</tr>   
+			<tr>  
+				<td>projectmanageremail:</td>  
+				<td><input type="email"  ng-model="projectmanageremail"/></td>  
+			</tr> 
+			<tr>  
+				<td>projectmanagerephone:</td>  
+				<td><input type="tel"  ng-model="projectmanagerephone"/></td>  
+			</tr>   
+			<tr>  
+				<td>startdate:</td>   
+				<td><input type="date" id="startdate" /></td>  
+			</tr>
+			<tr>  
+				<td>enddate:</td>  
+				<td><input type="date" id="enddate"/></td>  
+			</tr>  
+			<tr>   
+				<td>
+					<input type="submit" value="Add" ng-click="add()" class="btn btn-success">
+                    <input type="submit" value="Save" ng-click="edit()" class="btn btn-info">
+                     <input type="submit" value="clear" ng-click="reset()">
+				</td>  
+			</tr>   
+		</table>  
+    </form> 
+    </div>
+    <div>
+	   <form >
+	     <table>
+	       <tr><td>Project name:</td> 
+				         <td>
+				           <select ng-model="project">
+				            <option ng-repeat="x in projectList" value="{{x.id}}">{{x.projectname}} </option>
+		                   </select>
+				        </td>
+			       </tr>
+			       <tr>
+			       	   <td>Employee name:</td>
+			       	   <td>
+		                  <select ng-model="employee">
+		                          <option ng-repeat="x in employeeList" value="{{x.id}}">{{x.firstname}} {{x.lastname}}</option>
+		                   </select>
+	     	            </td>
+	                 </tr>
+	                  <tr>
+	                      <td><input   ng-click="send(employee,project)" type="submit" value="submit" class="btn btn-success"></td>
+	                  </tr>
+	           </table>
+	     </form>
+     </div>   
+</div>  

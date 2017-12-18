@@ -1,0 +1,63 @@
+<div>
+  <div>
+  <b>Hour report for last week</b> search:<input type="search" ng-model="search"><button ng-click="create()" class="btn btn-success">create hour report</button>
+	<table border="1" class="table table-striped">  
+		<tr>  
+		    <th>Project</th>  
+		    <th>Date</th> 
+		    <th>Start hour</th>  
+		    <th>End hour</th>  
+		    <th>Description</th>  
+		</tr>  
+	      <tr ng-repeat="x in employee  | filter:search">  
+			    <td>{{ x.project.projectname }}</td>  
+			    <td>{{ x.date }}</td>  
+			    <td>{{ x.starthour}}</td>  
+			    <td>{{ x.endhour}}</td>  
+			    <td>{{ x.description }}</td>  
+         </tr>  
+     </table> 
+   </div>
+   <div id="dialog" title="hourReport" style="display:none">
+    <form>  
+         <table>  
+				<tr>  
+					<td>project:</td>  
+					<td>
+					    <select ng-model="project">
+				                <option ng-repeat="x in projectList" value="{{x.id}}">{{x.projectname}}
+				                </option >
+					    </select>
+					</td>  
+				</tr>   
+				<tr>  
+					<td>date:</td>  
+					<td><input  ng-model="date" id="datepicker"></td>  
+				</tr>  
+				<tr>  
+					<td>start hour:</td>  
+					<td>
+						<select  ng-model="starthour" id="startHour"></select>
+					 </td> 
+				</tr>  
+				<tr>  
+					<td>end hour:</td>   
+				    <td>
+					  <select  ng-model="endhour" id="endHour">	</select>
+				   </td> 
+				</tr>
+			    <tr>  
+					<td>description:</td>   
+					<td><input  ng-model="description"/></td> 
+			    </tr> 
+			    <tr>  
+					<td>
+					    <input type="submit" value="Add" ng-click="add()">
+					    <input type="submit" value="clear" ng-click="reset()">
+					</td>   
+			    </tr>   
+		   </table>  
+        </form>
+    </div>  
+ </div>
+  

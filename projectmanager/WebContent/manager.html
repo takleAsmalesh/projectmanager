@@ -1,0 +1,85 @@
+ <div>
+    <b>Active project</b><input id="one" type="radio" ng-model="content" value="one" checked="checked">
+    <b>Project before completion</b><input id="two" type="radio" ng-model="content" value="two">
+    <b>Active and Big Customer</b><input id="three" type="radio" ng-model="content" value="three">
+
+ </div>
+<div ng-switch="content">
+  <div ng-switch-default>
+search:<input type="search" ng-model="search" ><br>
+  <table border="1"  class="table table-striped">
+    <thead>
+            <tr>
+                <th>Project</th>
+                <th>Project manager</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Start date</th>
+                <th>End date</th>
+           
+            </tr>
+    </thead>
+    <tbody>
+            <tr ng-repeat="x in activeProjects | filter:search">
+                <td>{{x.projectname}}</td>
+                <td>{{x.customerprojectmanager}}</td>
+                <td>{{x.projectmanageremail}}</td>
+                <td>{{x.projectmanagerephone}}</td>
+                <td>{{x.startdate}}</td>
+                <td>{{x.enddate}}</td>
+             
+            </tr>
+    </tbody>
+    </table>
+ </div>
+<div ng-switch-when="two">
+search:<input type="search" ng-model="search2" ><br>
+<table border="1"  class="table table-striped">
+    <thead>
+            <tr>
+                <th>Project</th>
+                <th>Project manager</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Start date</th>
+                <th>End date</th>
+           
+            </tr>
+    </thead>
+    <tbody>
+            <tr ng-repeat="x in projectList | filter:search2">
+                <td>{{x.projectname}}</td>
+                <td>{{x.customerprojectmanager}}</td>
+                <td>{{x.projectmanageremail}}</td>
+                <td>{{x.projectmanagerephone}}</td>
+                <td>{{x.startdate}}</td>
+                <td>{{x.enddate}}</td>
+             
+            </tr>
+    </tbody>
+    </table>
+</div>
+<div ng-switch-when="three">
+search:<input type="search" ng-model="search3" ><br>
+<table border="1"  class="table table-striped">
+    <thead>
+            <tr>
+                <th>Company name</th>
+                <th>Company number</th>
+                <th>Project count</th>
+                <th>Active</th>
+            </tr>
+    </thead>
+    <tbody>
+            <tr ng-repeat="x in customerList | filter:search3">
+                <td>{{x.companyname}}</td>
+                <td>{{x.companynumber}}</td>
+                <td>{{x.projectcount}}</td>
+                <td>{{x.active}}</td>
+            </tr>
+    </tbody>
+    </table>
+</div>
+</div>
+
+    

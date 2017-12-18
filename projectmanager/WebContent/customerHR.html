@@ -1,0 +1,38 @@
+<div>
+   <table>
+	  <tr>  
+           <td><b>Year And Month:</b></td>
+           <td><input ng-model="yearAndMonth" type="date" data-format="MM-yyyy" id="datepickerC"></td>
+	      <td><b>Project:</b></td>
+	      <td>
+	       <select ng-model="project">
+	             <option></option>
+	             <option ng-repeat="x in customerProject" value="{{x.id}}">{{x.projectname}}</option>
+	       </select>
+	      </td>
+         <td><button ng-click="showReport()" class="btn">Show report</button></td> 
+     </tr>
+  </table>
+</div>	
+
+<div> 
+  <b>Customer Hour report:</b> search<input type="search" ng-model="search">
+	<table border="1" class="table table-striped">  
+			<tr>  
+			    <th>Employee</th>  
+			    <th>Project</th>  
+			    <th>Date</th>  
+			    <th>Start hour</th>  
+			    <th>End hour</th>  
+			    <th>Description</th>  
+			</tr>  
+			<tr ng-repeat="x in customerHR | filter: searech">  
+			    <td>{{ x.employee.firstname+" "+x.employee.lastname}}</td>  
+			    <td>{{ x.project.projectname}}</td>  
+			    <td>{{ x.date}}</td>  
+			    <td>{{ x.starthour}}</td>  
+			    <td>{{ x.endhour}}</td>  
+			    <td>{{ x.description }}</td>  
+		  </tr>  
+	  </table> 
+ </div>     

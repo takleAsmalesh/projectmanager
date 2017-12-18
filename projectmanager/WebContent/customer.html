@@ -1,0 +1,30 @@
+
+ <div>
+<b>active project:</b> search<input type="search" ng-model="search" ><br>
+  <table border="1" class="table table-striped">
+	     <thead>
+	            <tr>
+	                <th>Project</th>
+	                <th>Project Manager</th>
+	                <th>Email</th>
+	                <th>Phone</th>
+	                <th>Start date</th>
+	                <th>End date</th>
+	           
+	            </tr>
+	    </thead>
+    <tbody>
+            <tr ng-repeat="x in projectList | filter:search">
+                <td>{{x.projectname}}</td>
+                <td>{{x.customerprojectmanager}}</td>
+                <td>{{x.projectmanageremail}}</td>
+                <td>{{x.projectmanagerephone}}</td>
+                <td>{{x.startdate}}</td>
+                <td>{{x.enddate}}</td>
+             
+            </tr>
+    </tbody>
+    </table>
+</div>
+
+    

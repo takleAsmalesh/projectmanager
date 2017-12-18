@@ -1,0 +1,16 @@
+ <div class="login" align="center">
+ <b>Login page</b>
+	 <form>
+	    <input type="text" placeholder="Enter Username" name="uname" required ng-model="username"><br>
+	    <br>
+	    <input type="password" placeholder="Enter Password" name="psw" required ng-model="password"><br>
+	    <input type="submit" ng-click="login()" value="login" class="btn-success">
+	    <button ng-click="password1()" >Forgot password?</button>
+	</form>
+</div>
+ <div style="display: none" id="dialog" title="enter username">
+	  <form>
+	      <input ng-model="getnewuser">
+	      <input type="submit" ng-click="forgetPassword()" >
+	  </form>
+ </div>
